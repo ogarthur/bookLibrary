@@ -1,4 +1,4 @@
-@use 'colors.scss' as *;
+@use '../../../../../theme/colors.scss' as *;
 
 .book-list-container {
   padding: 2rem;
@@ -39,7 +39,7 @@
       display: flex;
       gap: 8px;
 
-      button {
+      span {
         width: 1rem;
         height: 1rem;
         border-radius: 50%;

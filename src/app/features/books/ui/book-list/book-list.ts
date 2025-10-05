@@ -72,7 +72,7 @@ export class BookListComponent implements OnInit {
 
   onModalSave(book: IBook) {
     book.id = crypto.randomUUID();
-    this.iBookService.addBook(book);
+    this.iBookService.addBook(book).subscribe();
 
     const totalBooks = this.iBookService.getTotalBooks();
     const lastPage = Math.ceil(totalBooks / this.pageSize);
@@ -92,9 +92,5 @@ export class BookListComponent implements OnInit {
 
   onDotKeydown(event: KeyboardEvent) {
     console.log('Keydown event:', event);
-    // if (event.key === 'Enter' || event.key === ' ') {
-    //   event.preventDefault();
-    //   this.goToPage(page);
-    // }
   }
 }

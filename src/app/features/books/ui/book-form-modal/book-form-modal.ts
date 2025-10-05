@@ -29,7 +29,7 @@ export class BookFormModalComponent implements OnChanges {
     title: [this.book ? this.book.title : '', [Validators.required, Validators.minLength(1)]],
     author: [this.book ? this.book.author : '', [Validators.required, Validators.minLength(2)]],
     year: [
-      this.book ? this.book.year : '',
+      this.book ? Number(this.book.year) : '',
       [Validators.required, Validators.min(0), Validators.max(new Date().getFullYear())],
     ],
     genre: [this.book ? this.book.genre : '', [Validators.required]],
@@ -41,15 +41,22 @@ export class BookFormModalComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['book'] && this.book) {
+      console.log('BookFormModalComponent - ngOnChanges - book changed:', this.book);
       this.bookForm.patchValue({
         title: this.book.title,
         author: this.book.author,
-        year: this.book.year,
+        year: Number(this.book.year),
         genre: this.book.genre,
         coverUrl: this.book.coverUrl,
       });
+      // Force all controls to be touched so validation errors show
+      this.bookForm.markAllAsTouched();
+
+      // Update validity
+      this.bookForm.updateValueAndValidity();
     }
   }
+
   submit() {
     this.saved.emit(this.bookForm.value as IBook);
     this.close();

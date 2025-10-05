@@ -1,4 +1,5 @@
 import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { IBook } from '@books/domain';
 import { map } from 'rxjs/operators';
 
 export const dataInterceptor: HttpInterceptorFn = (req, next) => {
@@ -9,6 +10,14 @@ export const dataInterceptor: HttpInterceptorFn = (req, next) => {
           ...item,
           year: new Date(item.year).getFullYear(),
         }));
+        return event.clone({ body: modifiedBody });
+      }
+      if (event instanceof HttpResponse && event.body) {
+        const book = event.body as IBook;
+        const modifiedBody = {
+          ...event.body,
+          year: new Date(book.year).getFullYear(),
+        };
         return event.clone({ body: modifiedBody });
       }
       return event;

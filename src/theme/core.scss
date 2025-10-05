@@ -1,4 +1,4 @@
-@use 'colors.scss' as *;
+@use './colors.scss' as *;
 // font-weight
 @for $i from 1 through 7 {
   $weight: $i * 100;

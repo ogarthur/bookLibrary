@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@use 'colors.scss' as *;
+@use './theme/colors.scss' as *;
 @use './theme/core';
-@use 'mixins.scss' as *;
+@use './theme/mixins.scss' as *;
 
 * {
   font-family: Roboto, sans-serif;

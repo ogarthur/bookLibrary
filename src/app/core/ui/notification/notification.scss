@@ -1,3 +1,5 @@
+@use '../../../../theme/colors.scss' as *;
+
 .notification-container {
   position: fixed;
   top: 1rem;
@@ -19,16 +21,16 @@
 }
 
 .success {
-  background: #4caf50;
+  background: $color-success;
 }
 .error {
-  background: #f44336;
+  background: $color-error;
 }
 .info {
-  background: #2196f3;
+  background: $color-info;
 }
 .warning {
-  background: #ff9800;
+  background: $color-warning;
 }
 
 @keyframes fadeIn {

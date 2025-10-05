@@ -1,3 +1,4 @@
+@use '../../../../../theme/colors.scss' as *;
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -11,7 +12,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 90%;
@@ -20,10 +20,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: $background-light;
   padding: 2rem;
   z-index: 10;
 
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $text-high;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -35,6 +40,8 @@
       label {
         margin-bottom: 0.5rem;
         font-weight: bold;
+        color: $color-primary;
+        font-size: 1.5rem;
       }
       input,
       select {
@@ -43,11 +50,17 @@
         border-radius: 4px;
         font-size: 1rem;
       }
+      .error {
+        color: $color-error;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+      }
     }
   }
   .form-actions {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 2rem;
   }
 }

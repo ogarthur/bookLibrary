@@ -1,5 +1,5 @@
-@use 'colors.scss' as *;
-@use 'mixins.scss' as *;
+@use '../../../../../theme/colors.scss' as *;
+@use '../../../../../theme/mixins.scss' as *;
 .card {
   display: flex;
   cursor: pointer;

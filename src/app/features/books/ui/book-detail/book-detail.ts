@@ -48,7 +48,6 @@ export class BookDetailComponent implements OnInit {
   }
 
   editBook() {
-    console.log('Edit book clicked');
     this.showModal.set(true);
   }
 
@@ -59,20 +58,17 @@ export class BookDetailComponent implements OnInit {
 
     this.iBookService.deleteBook(this.book.id).subscribe({
       next: () => {
-        this.notificationService.showSuccess('Book deleted successfully');
         this.router.navigate(['/library']);
       },
       error: (err: any) => {
         console.error('Failed to delete book:', err);
-        this.notificationService.showError('Failed to delete book');
       },
     });
   }
 
   onModalSave(book: IBook) {
     book.id = crypto.randomUUID();
-    this.iBookService.addBook(book);
-
+    this.iBookService.updateBook(book).subscribe();
     this.showModal.set(false);
   }
 
