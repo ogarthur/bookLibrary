@@ -1,0 +1,15 @@
+<article class="card" aria-label="Book card">
+  <div class="card-image-container">
+    <img
+      class="card-image"
+      src="{{ book.coverUrl ? book.coverUrl : 'assets/images/png/default-cover.png' }}"
+      alt="Book image"
+    />
+  </div>
+
+  <div class="card-content">
+    <span class="card-badge">{{ book.genre }}</span>
+    <h3 class="card-title" title="{{ book.title }}">{{ book.title }}</h3>
+    <p class="card-subtitle">{{ book.author }} - {{ book.year }}</p>
+  </div>
+</article>

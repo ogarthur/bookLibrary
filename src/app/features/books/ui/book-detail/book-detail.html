@@ -1,0 +1,37 @@
+<div class="book-detail-container">
+  <button class="button back-button" (click)="goBack()">
+    <fa-icon [icon]="faArrowLeft" />Back
+  </button>
+  @if (book) {
+    <div class="book-detail">
+      <img
+        class="book-cover"
+        src="{{ book.coverUrl ? book.coverUrl : 'assets/images/png/default-cover.png' }}"
+        alt="Book cover"
+      />
+
+      <div class="book-info">
+        <h2 class="book-title">{{ book.title }}</h2>
+        <p class="book-author"><span class="fw-700">Author:</span> {{ book.author }}</p>
+        <p class="book-year"><span class="fw-700">Year:</span> {{ book.year }}</p>
+        <p class="book-genre"><span class="fw-700">Genre:</span> {{ book.genre }}</p>
+        <div class="book-buttons">
+          <button class="button edit" (click)="editBook()"><fa-icon [icon]="faEdit" />Edit</button>
+          <button class="button delete" (click)="deleteBook()">
+          <fa-icon [icon]="faTrash" />Delete
+        </button>
+      </div>
+      </div>
+
+    </div>
+  }
+</div>
+
+@if (showModal()) {
+  <app-book-form-modal
+    [title]="'Edit Book'"
+    [book]="book"
+    (saved)="onModalSave($event)"
+    (closed)="onModalClose()"
+  />
+}

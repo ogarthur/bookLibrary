@@ -1,0 +1,37 @@
+<div class="book-list-container">
+  <div class="header">
+    <button class="button" (click)="addBook()"><fa-icon [icon]="faPlus" />Add Book</button>
+  </div>
+
+  <div class="content">
+    <div class="books">
+      @for (book of books; track $index) {
+        <app-book-card [book]="book" (click)="gotoDetails(book.id)" />
+      }
+    </div>
+
+    <div class="custom-stepper">
+      <!-- Left Icon -->
+      <button class="arrow" (click)="prevPage()" [disabled]="currentPage === 1">
+        <fa-icon [icon]="faChevronLeft" />
+      </button>
+
+      <!-- Dots -->
+      <div class="dots">
+        @for (page of [].constructor(totalPages); track $index) {
+          <button
+            (click)="goToPage($index + 1)"
+            [ngClass]="{ active: currentPage === $index + 1 }"
+          ></button>
+        }
+      </div>
+
+      <button class="arrow" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <fa-icon [icon]="faChevronRight" />
+      </button>
+    </div>
+  </div>
+</div>
+@if (showModal()) {
+  <app-book-form-modal (saved)="onModalSave($event)" (closed)="onModalClose()" />
+}

@@ -1,0 +1,94 @@
+<div
+  class="modal-backdrop"
+  tabindex="0"
+  role="button"
+  (click)="close()"
+  (keyup.enter)="close()"
+  (keyup.space)="close()"
+></div>
+<div class="modal-content">
+  <h2>{{ title }}</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="submit()" novalidate>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" formControlName="title" type="text" />
+      @if (bookForm.get('title')?.touched && bookForm.get('title')?.invalid) {
+        <small class="error">
+          @if (bookForm.get('title')?.errors?.['required']) {
+            <span>Title is required.</span>
+          }
+          @if (bookForm.get('title')?.errors?.['minlength']) {
+            <span>Title must be at least 1 character.</span>
+          }
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input id="author" formControlName="author" type="text" />
+      @if (bookForm.get('author')?.touched && bookForm.get('author')?.invalid) {
+        <small class="error">
+          @if (bookForm.get('author')?.errors?.['required']) {
+            <span>Author is required.</span>
+          }
+          @if (bookForm.get('author')?.errors?.['minlength']) {
+            <span>Author name must be at least 2 characters.</span>
+          }
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input id="year" formControlName="year" type="number" />
+      @if (bookForm.get('year')?.touched && bookForm.get('year')?.invalid) {
+        <small class="error">
+          @if (bookForm.get('year')?.errors?.['required']) {
+            <span>Year is required.</span>
+          }
+          @if (bookForm.get('year')?.errors?.['min']) {
+            <span>Year cannot be before 1000.</span>
+          }
+          @if (bookForm.get('year')?.errors?.['max']) {
+            <span>Year cannot be in the future.</span>
+          }
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input id="genre" formControlName="genre" type="text" />
+      @if (bookForm.get('genre')?.touched && bookForm.get('genre')?.invalid) {
+        <small class="error">
+          @if (bookForm.get('genre')?.errors?.['required']) {
+            <span>Genre is required.</span>
+          }
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="coverUrl">Cover URL (Optional)</label>
+      <input
+        id="coverUrl"
+        formControlName="coverUrl"
+        type="url"
+        placeholder="https://example.com/cover.jpg"
+      />
+      @if (bookForm.get('coverUrl')?.touched && bookForm.get('coverUrl')?.invalid) {
+        <small class="error">
+          @if (bookForm.get('coverUrl')?.errors?.['pattern']) {
+            <span>Enter a valid image URL.</span>
+          }
+        </small>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="button secondary" (click)="close()">Cancel</button>
+      <button type="submit" class="button" [ngClass]="{ disabled: bookForm.invalid }">Save</button>
+    </div>
+  </form>
+</div>

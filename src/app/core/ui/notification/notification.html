@@ -1,0 +1,16 @@
+<div class="notification-container">
+  @for (notification of notifications(); track $index) {
+    <div
+      class="notification"
+      [ngClass]="notification.type"
+      tabindex="0"
+      (click)="notificationService.removeNotification(notification.id)"
+      (keydown)="notificationService.removeNotification(notification.id)"
+    >
+      @if (notification.type === 'success') {
+        <fa-icon [icon]="faCircleCheck"></fa-icon>
+      }
+      {{ notification.message }}
+    </div>
+  }
+</div>

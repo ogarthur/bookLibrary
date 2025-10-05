@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'colors.scss' as *;
+@use './theme/core';
+@use 'mixins.scss' as *;
+
+* {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+html {
+  color: $color-primary;
+  background-color: $background-light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

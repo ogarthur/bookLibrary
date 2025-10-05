@@ -1,0 +1,57 @@
+@use 'colors.scss' as *;
+// font-weight
+@for $i from 1 through 7 {
+  $weight: $i * 100;
+
+  .fw-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+.button {
+  background: $color-secondary;
+  border: 1px solid $color-secondary;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1rem;
+  min-height: 40px;
+  padding: 12px 14px;
+  text-align: center;
+  vertical-align: middle;
+  padding-left:2rem;
+  padding-right:2rem;
+  &.disabled {
+    background-color: $color-error-dark;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &:hover,
+  &:active {
+    &:not(.disabled) {
+      background-color: initial;
+      background-position: 0 0;
+      color: $color-secondary;
+    }
+  }
+  &:active {
+    background-color: $color-secondary-dark;
+  }
+  &.secondary {
+    background: $color-error;
+    border: 1px solid $color-error;
+    &:hover,
+    &:active {
+      background-color: initial;
+      background-position: 0 0;
+      color: $color-error;
+    }
+    &:active {
+      background-color: $color-error-dark;
+    }
+  }
+}

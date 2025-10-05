@@ -1,0 +1,48 @@
+// _colors.scss
+
+// Primary palette — Rose (Angular Material Rose)
+$color-primary: #e91e63; // Rose 500
+$color-primary-light: #f48fb1; // Rose 300
+$color-primary-dark: #c2185b; // Rose 700
+
+// Secondary palette — Red (Angular Material Red)
+$color-secondary: #f44336; // Red 500
+$color-secondary-light: #ef9a9a; // Red 300
+$color-secondary-dark: #c62828; // Red 700
+
+// Success / positive actions — soft pink-green contrast
+$color-success: #43a047; // Green 600
+$color-success-light: #81c784; // Green 300
+$color-success-dark: #2e7d32; // Green 800
+
+// Warning / caution — warm amber tones
+$color-warning: #ffb300; // Amber 600
+$color-warning-light: #ffe082; // Amber 200
+$color-warning-dark: #ff8f00; // Amber 800
+
+// Error / destructive actions — deep red accents
+$color-error: #d32f2f; // Red 700
+$color-error-light: #ef5350; // Red 400
+$color-error-dark: #b71c1c; // Red 900
+
+// Info / neutral highlights — soft rose-gray tones
+$color-info: #ec407a; // Rose 400
+$color-info-light: #f48fb1; // Rose 300
+$color-info-dark: #ad1457; // Rose 800
+
+// Greyscale — slightly warm to match red/rose tones
+$gray-100: #f8f9fa;
+$gray-200: #f0f0f0;
+$gray-300: #dcdcdc;
+$gray-400: #b0b0b0;
+$gray-500: #8d8d8d;
+$gray-600: #6b6b6b;
+$gray-700: #4a4a4a;
+$gray-800: #2f2f2f;
+$gray-900: #1a1a1a;
+
+// Background & text — subtle contrast for red/rose theme
+$background-light: #fff0f3; // very pale rose tint
+$background-dark: #1a0006; // deep rose-black
+$text-light: #fff5f6; // soft warm white
+$text-dark: #2d0a12; // dark rose-brown
