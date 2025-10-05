@@ -90,8 +90,8 @@ export class BookListComponent implements OnInit {
     this.router.navigate(['/library', bookId]);
   }
   
-  onDotKeydown(event: KeyboardEvent, page: number) {
-    console.log('Keydown event:', event, 'on page dot:', page);
+  onDotKeydown(event: KeyboardEvent,) {
+    console.log('Keydown event:', event);
     // if (event.key === 'Enter' || event.key === ' ') {
     //   event.preventDefault();
     //   this.goToPage(page);
