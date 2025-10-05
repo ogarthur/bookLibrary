@@ -5,11 +5,12 @@
   cursor: pointer;
   flex-direction: column;
   background-color: $background-dark;
-  width: 250px;
-  height: 500px;
+  width: 300px;
+  height: 550px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   overflow: hidden;
+  color : $text-light;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -40,14 +41,16 @@
 
     .card-badge {
       background-color: $color-secondary;
-      color: #ffffff;
+      color:$color-primary;
       padding: 4px 8px;
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 1rem;
+      font-weight: 500;
       width: fit-content;
     }
 
     .card-title {
+      font-size:1.5rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
