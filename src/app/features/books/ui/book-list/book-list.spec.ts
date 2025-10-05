@@ -99,7 +99,13 @@ describe('BookListComponent', () => {
   });
 
   it('should save book from modal and close modal', () => {
-    const newBook: IBook = { id: '', title: 'New Book', genre: 'Fiction', author: 'Me', year: '2025' };
+    const newBook: IBook = {
+      id: '',
+      title: 'New Book',
+      genre: 'Fiction',
+      author: 'Me',
+      year: '2025',
+    };
 
     // Mock crypto.randomUUID
     const originalRandomUUID = crypto.randomUUID;

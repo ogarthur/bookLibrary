@@ -31,7 +31,7 @@ describe('InMemoryBookService', () => {
   });
 
   it('should return all books with pagination', (done) => {
-    service.getBooks().subscribe((result:any) => {
+    service.getBooks().subscribe((result: any) => {
       expect(result.items.length).toBeLessThanOrEqual(5); // default pageSize
       expect(result.totalItems).toBe(DEFAULT_BOOKS.length);
       expect(result.totalPages).toBe(Math.ceil(DEFAULT_BOOKS.length / 5));
@@ -41,7 +41,7 @@ describe('InMemoryBookService', () => {
 
   it('should return a book by ID', (done) => {
     const book = DEFAULT_BOOKS[0];
-    service.getBookById(book.id).subscribe((result:any) => {
+    service.getBookById(book.id).subscribe((result: any) => {
       expect(result).toEqual(book);
       done();
     });
@@ -49,9 +49,11 @@ describe('InMemoryBookService', () => {
 
   it('should add a new book', (done) => {
     const newBook: IBook = {
-      id: 'new', title: 'New Book', author: 'Author',
+      id: 'new',
+      title: 'New Book',
+      author: 'Author',
       year: '',
-      genre: ''
+      genre: '',
     };
     service.addBook(newBook).subscribe((success) => {
       expect(success).toBeTrue();
@@ -64,9 +66,9 @@ describe('InMemoryBookService', () => {
 
   it('should update an existing book', (done) => {
     const book = { ...DEFAULT_BOOKS[0], title: 'Updated Title' };
-    service.updateBook(book).subscribe((success:any) => {
+    service.updateBook(book).subscribe((success: any) => {
       expect(success).toBeTrue();
-      service.getBookById(book.id).subscribe((updatedBook:any) => {
+      service.getBookById(book.id).subscribe((updatedBook: any) => {
         expect(updatedBook?.title).toBe('Updated Title');
         expect(loggerService.log).toHaveBeenCalledWith('Updated book with id:', book.id);
         expect(notificationService.showSuccess).toHaveBeenCalledWith('Book updated successfully');
@@ -77,9 +79,9 @@ describe('InMemoryBookService', () => {
 
   it('should delete a book', (done) => {
     const bookId = DEFAULT_BOOKS[0].id;
-    service.deleteBook(bookId).subscribe((success:any) => {
+    service.deleteBook(bookId).subscribe((success: any) => {
       expect(success).toBeTrue();
-      service.getBookById(bookId).subscribe((deletedBook:any) => {
+      service.getBookById(bookId).subscribe((deletedBook: any) => {
         expect(deletedBook).toBeUndefined();
         expect(loggerService.log).toHaveBeenCalledWith('Deleted book with id:', bookId);
         expect(notificationService.showSuccess).toHaveBeenCalledWith('Book deleted successfully');
