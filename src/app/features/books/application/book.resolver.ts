@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
-import { Observable, of, EMPTY } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IBook } from '@books/domain';
 import { InMemoryBookService } from '@books/infrastructure/InMemoryBookService/in-memory-book-service';
