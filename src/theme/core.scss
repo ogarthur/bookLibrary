@@ -9,8 +9,8 @@
 }
 
 .button {
-  background: $color-secondary;
-  border: 1px solid $color-secondary;
+  background: $button-background;
+  border: 1px solid $button-background;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
@@ -23,8 +23,9 @@
   padding: 12px 14px;
   text-align: center;
   vertical-align: middle;
-  padding-left:2rem;
-  padding-right:2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1rem;
   &.disabled {
     background-color: $color-error-dark;
     opacity: 0.5;
