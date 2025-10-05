@@ -1,48 +1,51 @@
 // _colors.scss
 
-// Primary palette — Rose (Angular Material Rose)
-$color-primary: #e91e63; // Rose 500
-$color-primary-light: #f48fb1; // Rose 300
-$color-primary-dark: #c2185b; // Rose 700
+$color-header: #232c36; // Darker shade for headers
+// Primary palette — Deep Indigo/Navy (Sophisticated, calm, bookish)
+$color-primary: #37474f; // Blue Grey 700 (Deep Indigo/Navy)
+$color-primary-light: #546e7a; // Blue Grey 500
+$color-primary-dark: #263238; // Blue Grey 900
 
-// Secondary palette — Red (Angular Material Red)
-$color-secondary: #f44336; // Red 500
-$color-secondary-light: #ef9a9a; // Red 300
-$color-secondary-dark: #c62828; // Red 700
+// Secondary palette — Muted Gold/Amber (Accent for interactive elements)
+$color-secondary: #ffb300; // Amber 600 (Gold/Amber)
+$color-secondary-light: #ffd54f; // Amber 400
+$color-secondary-dark: #ff8f00; // Amber 800
 
-// Success / positive actions — soft pink-green contrast
-$color-success: #43a047; // Green 600
+// Success / positive actions — Standard Green
+$color-success: #4caf50; // Green 500
 $color-success-light: #81c784; // Green 300
-$color-success-dark: #2e7d32; // Green 800
+$color-success-dark: #388e3c; // Green 700
 
-// Warning / caution — warm amber tones
-$color-warning: #ffb300; // Amber 600
-$color-warning-light: #ffe082; // Amber 200
-$color-warning-dark: #ff8f00; // Amber 800
+// Warning / caution — Standard Orange
+$color-warning: #ff9800; // Orange 500
+$color-warning-light: #ffb74d; // Orange 300
+$color-warning-dark: #f57c00; // Orange 700
 
-// Error / destructive actions — deep red accents
-$color-error: #d32f2f; // Red 700
-$color-error-light: #ef5350; // Red 400
-$color-error-dark: #b71c1c; // Red 900
+// Error / destructive actions — Standard Red
+$color-error: #f44336; // Red 500
+$color-error-light: #e57373; // Red 300
+$color-error-dark: #d32f2f; // Red 700
 
-// Info / neutral highlights — soft rose-gray tones
-$color-info: #ec407a; // Rose 400
-$color-info-light: #f48fb1; // Rose 300
-$color-info-dark: #ad1457; // Rose 800
+// Info / neutral highlights — Muted Teal/Cyan
+$color-info: #00bcd4; // Cyan 500
+$color-info-light: #4dd0e1; // Cyan 300
+$color-info-dark: #0097a7; // Cyan 700
 
-// Greyscale — slightly warm to match red/rose tones
-$gray-100: #f8f9fa;
-$gray-200: #f0f0f0;
-$gray-300: #dcdcdc;
-$gray-400: #b0b0b0;
-$gray-500: #8d8d8d;
-$gray-600: #6b6b6b;
-$gray-700: #4a4a4a;
-$gray-800: #2f2f2f;
-$gray-900: #1a1a1a;
+// Greyscale — Neutral, supporting the Indigo theme
+$gray-100: #fafafa; // Very light background
+$gray-200: #eeeeee;
+$gray-300: #e0e0e0;
+$gray-400: #bdbdbd;
+$gray-500: #9e9e9e; // Used for disabled elements
+$gray-600: #757575;
+$gray-700: #616161;
+$gray-800: #424242;
+$gray-900: #212121; // Used for dark text
 
-// Background & text — subtle contrast for red/rose theme
-$background-light: #fff0f3; // very pale rose tint
-$background-dark: #1a0006; // deep rose-black
-$text-light: #fff5f6; // soft warm white
-$text-dark: #2d0a12; // dark rose-brown
+// Background & text — High contrast and warm for readability
+$background-light: #ece8dc; // Clean White
+$background-dark: #1c262b; // Very Dark Indigo (for dark mode)
+$text-light: #f5f5f5; // Off-White
+$text-dark: $gray-900; // Dark Grey/Black for main text
+$text-high: #dfad5c;
+$button-background: #e1aa55;

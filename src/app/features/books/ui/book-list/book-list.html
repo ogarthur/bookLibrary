@@ -19,10 +19,12 @@
       <!-- Dots -->
       <div class="dots">
         @for (page of [].constructor(totalPages); track $index) {
-          <button
+          <span
+            tabindex="0"
             (click)="goToPage($index + 1)"
+            (keydown)="onDotKeydown($event)"
             [ngClass]="{ active: currentPage === $index + 1 }"
-          ></button>
+          ></span>
         }
       </div>
 

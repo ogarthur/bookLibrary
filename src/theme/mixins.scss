@@ -1,11 +1,11 @@
-@use "sass:map";
+@use 'sass:map';
 
 $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1400px,
 );
 
 @mixin media-min-max-width($minvalue, $maxvalue) {
@@ -15,21 +15,18 @@ $breakpoints: (
     @media (min-width: #{$minvalue}) and (max-width: #{$maxvalue}) {
       @content;
     }
-  }
-  @else if $minvalue != null {
+  } @else if $minvalue != null {
     $minvalue: get-breakpoint-value($minvalue);
     @media (min-width: #{$minvalue}) {
       @content;
     }
-  }
-  @else if $maxvalue != null {
+  } @else if $maxvalue != null {
     $maxvalue: get-breakpoint-value($maxvalue);
     @media (max-width: #{$maxvalue}) {
       @content;
     }
   }
 }
-
 
 @function get-breakpoint-value($value) {
   @if map.has-key($breakpoints, $value) {

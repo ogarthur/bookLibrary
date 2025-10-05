@@ -12,17 +12,18 @@
 
       <div class="book-info">
         <h2 class="book-title">{{ book.title }}</h2>
-        <p class="book-author"><span class="fw-700">Author:</span> {{ book.author }}</p>
-        <p class="book-year"><span class="fw-700">Year:</span> {{ book.year }}</p>
-        <p class="book-genre"><span class="fw-700">Genre:</span> {{ book.genre }}</p>
+        <ul class="book-details">
+          <li><span class="fw-700">Genre:</span> {{ book.genre }}</li>
+          <li><span class="fw-700">Author:</span> {{ book.author }}</li>
+          <li><span class="fw-700">Year:</span> {{ book.year }}</li>
+        </ul>
         <div class="book-buttons">
-          <button class="button edit" (click)="editBook()"><fa-icon [icon]="faEdit" />Edit</button>
           <button class="button delete" (click)="deleteBook()">
-          <fa-icon [icon]="faTrash" />Delete
-        </button>
+            <fa-icon [icon]="faTrash" />Delete
+          </button>
+          <button class="button edit" (click)="editBook()"><fa-icon [icon]="faEdit" />Edit</button>
+        </div>
       </div>
-      </div>
-
     </div>
   }
 </div>

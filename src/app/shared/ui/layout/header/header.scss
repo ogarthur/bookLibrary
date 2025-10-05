@@ -4,16 +4,17 @@
   border-bottom: solid 1px $gray-300;
   margin-bottom: 10px;
   padding: 0.5rem 2rem;
-  background-color: rgba($color-primary-light, 0.25);
+  background-color: $color-header;
   a {
     text-decoration: none;
   }
   .header-content {
     display: flex;
     align-items: center;
-    color: $color-primary;
+    color: $text-light;
     h1 {
       font-size: 2rem;
+      padding: 0.5rem;
     }
     img {
       height: 40px;
